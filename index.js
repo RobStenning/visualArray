@@ -63,7 +63,24 @@ function removeFromArray(){
 
 //general functionality
 
+const selector = document.getElementById('range');
+const range = document.createElement("option");
+rangeArray = new Array();
+let count = myArray.length;
+
+function selectRange(){
+    console.log(`about to add ${count} to the list`)
+    rangeArray.length = 0;
+    selector.options.length=0
+    console.log(count);
+    for (let i = 0; i < count; i++) {
+        new Option(text(count), value(count))
+        console.log(`now adding ${count} to the list`)
+    }
+}
+
 function refreshArray(){
     visualArray.innerHTML = myArray
     visualLength.innerHTML = myArray.length
+    selectRange();
 }
