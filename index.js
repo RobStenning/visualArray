@@ -1,7 +1,7 @@
 console.log('welcome to array builder')
 const myArray = new Array();
 const visualArray = document.getElementById('array');
-visualArray.innerHTML = 'use the buttons to amend the array'
+visualArray.innerHTML = '[use the buttons to amend the array]'
 const visualLength = document.getElementById('length');
 visualLength.innerHTML = myArray.length;
 
@@ -18,19 +18,19 @@ insertButton.addEventListener("click", insertArray)
 const addRange = document.getElementById('addRange');
 
 function pushToArray(){
-    myArray.push('X');
+    myArray.push('&#9748');
     refreshArray();
 }
 
 function unshiftArray(){
-    myArray.unshift('Y');
+    myArray.unshift('&#9889');
     refreshArray();
 }
 
 function insertArray(){
     let insertAt = addRange.options[addRange.selectedIndex].innerHTML
     console.log(`inserting at index of ${insertAt}`)
-    myArray.splice(insertAt, 0, 'Z')
+    myArray.splice(insertAt, 0, '&#9924')
     refreshArray();
 }
 
@@ -59,7 +59,7 @@ function shiftArray(){
 function removeFromArray(){
     let removeAt = removeRange.options[removeRange.selectedIndex].innerHTML
     console.log(`removing at index of ${removeAt}`)
-    myArray.splice(removeAt, 1, 'W')
+    myArray.splice(removeAt, 1)
     refreshArray();
 }
 
@@ -78,12 +78,25 @@ function selectRange(){
         i += 1;
         removeRange.appendChild(addOption);
         addRange.appendChild(removeOption);      
+    } while (i < myArray.length + 1)
+}
+
+function indexOf(){
+    let i = 0;
+    const indexArray =new Array();
+    indexArray.length = 0;
+    do {
+        const indexOf = document.getElementById('indexOf')
+        indexArray.push(i);
+        i += 1;
+        indexOf.innerHTML = `[${indexArray}]`;
     } while (i < myArray.length)
 }
 
 function refreshArray(){
-    visualArray.innerHTML = myArray
+    visualArray.innerHTML = `[ ${myArray} ]`
     visualLength.innerHTML = myArray.length
     console.log(`my array is ${myArray.length} long`)
     selectRange();
+    indexOf();
 }
