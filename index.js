@@ -16,19 +16,16 @@ const insertButton = document.getElementById('insert');
 insertButton.addEventListener("click", insertArray)
 
 function pushToArray(){
-    myArray.push('x');
-    console.log('push button');
+    myArray.push('X');
     refreshArray();
 }
 
 function unshiftArray(){
-    console.log('unshift button');
-    myArray.unshift('1');
+    myArray.unshift('Y');
     refreshArray();
 }
 
 function insertArray(){
-    console.log('insert button');
     refreshArray();
 }
 
@@ -44,43 +41,41 @@ removeButton.addEventListener("click", removeFromArray)
 
 function popFromArray(){
     myArray.pop();
-    console.log('pop button')
     refreshArray();
 }
 
 function shiftArray(){
     myArray.shift();
-    console.log('shift button')
     refreshArray();
 }
 
 function removeFromArray(){
-    //myArray.shift();
-    console.log('remove button')
     refreshArray();
 }
 
 
 //general functionality
 
-const selector = document.getElementById('range');
-const range = document.createElement("option");
-rangeArray = new Array();
-let count = myArray.length;
+const addRange = document.getElementById('addRange');
+const removeRange = document.getElementById('removeRange');
+const range = document.getElementsByName('range')
 
 function selectRange(){
-    console.log(`about to add ${count} to the list`)
-    rangeArray.length = 0;
-    selector.options.length=0
-    console.log(count);
-    for (let i = 0; i < count; i++) {
-        new Option(text(count), value(count))
-        console.log(`now adding ${count} to the list`)
-    }
+    addRange.innerHTML = '';
+    removeRange.innerHTML = '';
+    let i = 0;
+    do {
+        let addOption = new Option(`${i}`, `${i}`);
+        let removeOption = new Option(`${i}`, `${i}`);
+        i += 1;
+        removeRange.appendChild(addOption);
+        addRange.appendChild(removeOption);      
+    } while (i < myArray.length)
 }
 
 function refreshArray(){
     visualArray.innerHTML = myArray
     visualLength.innerHTML = myArray.length
+    console.log(`my array is ${myArray.length} long`)
     selectRange();
 }
