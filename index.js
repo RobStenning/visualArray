@@ -15,6 +15,8 @@ unshiftButton.addEventListener("click", unshiftArray)
 const insertButton = document.getElementById('insert');
 insertButton.addEventListener("click", insertArray)
 
+const addRange = document.getElementById('addRange');
+
 function pushToArray(){
     myArray.push('X');
     refreshArray();
@@ -26,6 +28,9 @@ function unshiftArray(){
 }
 
 function insertArray(){
+    let insertAt = addRange.options[addRange.selectedIndex].innerHTML
+    console.log(`inserting at index of ${insertAt}`)
+    myArray.splice(insertAt, 0, 'Z')
     refreshArray();
 }
 
@@ -39,6 +44,8 @@ shiftButton.addEventListener("click", shiftArray)
 const removeButton = document.getElementById('remove');
 removeButton.addEventListener("click", removeFromArray)
 
+const removeRange = document.getElementById('removeRange');
+
 function popFromArray(){
     myArray.pop();
     refreshArray();
@@ -50,14 +57,15 @@ function shiftArray(){
 }
 
 function removeFromArray(){
+    let removeAt = removeRange.options[removeRange.selectedIndex].innerHTML
+    console.log(`removing at index of ${removeAt}`)
+    myArray.splice(removeAt, 1, 'W')
     refreshArray();
 }
 
 
 //general functionality
 
-const addRange = document.getElementById('addRange');
-const removeRange = document.getElementById('removeRange');
 const range = document.getElementsByName('range')
 
 function selectRange(){
