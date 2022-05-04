@@ -1,0 +1,19 @@
+{
+  "name": "visualarray",
+  "version": "1.0.0",
+  "description": "visualArray",
+  "main": "index.js",
+  "scripts": {
+    "test": "n/a"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobStenning/visualArray.git"
+  },
+  "author": "Rob Stenning",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobStenning/visualArray/issues"
+  },
+  "homepage": "https://github.com/RobStenning/visualArray#readme"
+}
