@@ -119,10 +119,19 @@ function indexOf(){
     } while (i < myArray.length)
 }
 
+function testScript(){
+    myArray.forEach((item) => {
+        let div = document.createElement('div');
+        div.innerText = item;
+        document.getElementById('testarea').appendChild(div)
+    })
+}
+
 function refreshArray(){
     visualArray.innerHTML = `[ ${myArray} ]`
     visualLength.innerHTML = myArray.length
     console.log(`my array is ${myArray.length} long`)
     selectRange();
     indexOf();
+    testScript();
 }

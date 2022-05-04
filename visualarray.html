@@ -4,40 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Visual Array</h1>
-<div>
-    <h2>Add Items</h2>
-    <button id="push">push</button>
-    <button id="unshift">unshift</button>
-    <button id="insert">insert at</button>
-    <select name="range" id="addRange">
-        <option value="0">0</option>
-    </select>
+        <div class="container">
+        <h2>Add Items</h2>
+        <div class="row">
+            <button id="push">push</button>
+            <button id="unshift">unshift</button>
+            <button id="insert">insert at</button>
+            <select name="range" id="addRange">
+            <option value="0">0</option>
+            </select>
+        </div>
+        <h2>Remove Items</h2>
+        <div class="row">
+            <button id="pop">pop</button>
+            <button id="shift">shift</button>
+            <button id="remove">remove at</button>
+            <select name="range" id="removeRange">
+            <option value="0">0</option>
+            </select>
+        </div>
+    </div>
+
+<div class="container">
+    <h3 class="row">this is your array:</h3>
+    <div class="row" id="array"></div>
+    <h3 class="row" id="indexOf"></h3>
+    <h3 class="row">this is the index of the array</h3>
+    <h3 class="row">the array length is:</h3>
+    <h3 id="length"></h3>
 </div>
-<div>
-    <h2>Remove Items</h2>
-    <button id="pop">pop</button>
-    <button id="shift">shift</button>
-    <button id="remove">remove at</button>
-    <select name="range" id="removeRange">
-        <option value="0">0</option>
-    </select>
+
+
+<div class="container">
+    <h3 class="row">TEST AREA</h3>
+<div class="row" id="testarea">
+    <div class="column">[ </div>
+    <div class="column"> ]</div>
 </div>
-<div>
-    <h2>this is your array:</h2>
-    <h2 id="array"></h2>
 </div>
-<div>
-    <h2 id="indexOf"></h2>
-    <h2>this is the index of the array</h2>
-</div>
-<div>
-    <h2>the array length is:</h2>
-    <h2 id="length"></h2>
-</div>
+
+
+
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 </body>
