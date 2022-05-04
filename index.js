@@ -5,16 +5,30 @@ visualArray.innerHTML = '[use the buttons to amend the array]'
 const visualLength = document.getElementById('length');
 visualLength.innerHTML = myArray.length;
 
+//tippy global
+tippy.setDefaultProps({delay: [300, 0]});
+
 //add items buttons
 const pushButton = document.getElementById('push');
 pushButton.addEventListener("click", pushToArray)
 
+//all tool tips handeled by Tippy
+tippy('#push', {
+    content: '.push inserts an umbrella emoji at the end of the array',
+});
+
 const unshiftButton = document.getElementById('unshift');
 unshiftButton.addEventListener("click", unshiftArray)
 
+tippy('#unshift', {
+    content: '.unshift inserts a lightning bolt emoji at the beggining of the array',
+});
 const insertButton = document.getElementById('insert');
 insertButton.addEventListener("click", insertArray)
 
+tippy('#insert', {
+    content: 'Insert at uses the .splice method to insert a snowman emoji at the chosen index (use the dropdown selector)',
+});
 const addRange = document.getElementById('addRange');
 
 function pushToArray(){
@@ -38,11 +52,23 @@ function insertArray(){
 const popButton = document.getElementById('pop');
 popButton.addEventListener("click", popFromArray)
 
+tippy('#pop', {
+    content: '.pop removes from the end of the array',
+});
+
 const shiftButton = document.getElementById('shift');
 shiftButton.addEventListener("click", shiftArray)
 
+tippy('#shift', {
+    content: '.shift removes from the beginning of the array',
+});
+
 const removeButton = document.getElementById('remove');
 removeButton.addEventListener("click", removeFromArray)
+
+tippy('#remove', {
+    content: 'Remove at uses the .splice to remove from the chosen index (use the dropdown selector)',
+});
 
 const removeRange = document.getElementById('removeRange');
 
