@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RobStenning/visualArray/issues"
   },
-  "homepage": "https://github.com/RobStenning/visualArray#readme"
+  "homepage": "https://github.com/RobStenning/visualArray#readme",
+  "dependencies": {
+    "milligram": "^1.4.1"
+  }
 }

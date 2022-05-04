@@ -3,24 +3,22 @@
 Using the buttons you can visualise how the basic array instance methods work. The array will be displayed and updated as you add or remove items.
 
 ### To Add Items
-
-push
+#### push
 .push inserts an umbrella emoji at the end of the array
 
-unshift
+#### unshift
 .unshift inserts a lightning bolt emoji at the beggining of the array
 
-insert at
+#### insert at
 Insert at uses the .splice method to insert a snowman emoji at the chosen index (use the dropdown selector)
 
 
 ### Remove Items
-
-pop
+#### pop
 .pop removes from the end of the array
 
-shift
+#### shift
 .shift removes from the beginning of the array
 
-remove at
+#### remove at
 Remove at uses the .splice to remove from the chosen index (use the dropdown selector)
