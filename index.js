@@ -111,19 +111,29 @@ function indexOf(){
     let i = 0;
     const indexArray =new Array();
     indexArray.length = 0;
+    document.getElementById('testareaIndex').innerHTML = ''
     do {
         const indexOf = document.getElementById('indexOf')
         indexArray.push(i);
+        let div = document.createElement('div');
+        div.className = "column";
+        document.getElementById('testareaIndex').appendChild(div)
+        div.innerHTML = i
         i += 1;
         indexOf.innerHTML = `[${indexArray}]`;
     } while (i < myArray.length)
 }
 
 function testScript(){
+    document.getElementById('testarea').innerHTML = ''
+    
     myArray.forEach((item) => {
         let div = document.createElement('div');
-        div.innerText = item;
+        div.className = "column";
+        div.innerHTML = `${item}`;
         document.getElementById('testarea').appendChild(div)
+        let divIndex = document.createElement('divIndex');
+        document.getElementById('testareaIndex').appendChild(divIndex)
     })
 }
 

@@ -1,0 +1,21 @@
+#testareaIndex .column div{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: red;
+    width: 40px;
+}
+
+#testarea .column div {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: 40px;
+ }
+.testClass {
+    color: green;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
