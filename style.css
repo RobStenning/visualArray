@@ -6,11 +6,12 @@
     width: 40px;
 }
 
-#testarea .column div {
+.column div {
     align-items: center;
     align-content: center;
     text-align: center;
     width: 40px;
+    background-color: aqua;
  }
 .testClass {
     color: green;
@@ -19,3 +20,14 @@
     text-align: center;
 }
 
+.row .column {
+    padding: 0px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+div.column {
+    color: red;
+    padding: 0px;
+}

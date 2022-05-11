@@ -94,7 +94,7 @@ function removeFromArray(){
 
 const range = document.getElementsByName('range')
 
-function selectRange(){
+function updateSelectRange(){
     addRange.innerHTML = '';
     removeRange.innerHTML = '';
     let i = 0;
@@ -111,16 +111,15 @@ function indexOf(){
     let i = 0;
     const indexArray =new Array();
     indexArray.length = 0;
-    document.getElementById('testareaIndex').innerHTML = ''
+    document.getElementById('indexOf').innerHTML = ''
     do {
         const indexOf = document.getElementById('indexOf')
         indexArray.push(i);
         let div = document.createElement('div');
         div.className = "column";
-        document.getElementById('testareaIndex').appendChild(div)
+        document.getElementById('indexOf').appendChild(div)
         div.innerHTML = i
         i += 1;
-        indexOf.innerHTML = `[${indexArray}]`;
     } while (i < myArray.length)
 }
 
@@ -131,17 +130,24 @@ function testScript(){
         let div = document.createElement('div');
         div.className = "column";
         div.innerHTML = `${item}`;
-        document.getElementById('testarea').appendChild(div)
+        document.getElementById('array').appendChild(div)
         let divIndex = document.createElement('divIndex');
-        document.getElementById('testareaIndex').appendChild(divIndex)
+        document.getElementById('indexOf').appendChild(divIndex)
     })
 }
 
 function refreshArray(){
-    visualArray.innerHTML = `[ ${myArray} ]`
     visualLength.innerHTML = myArray.length
+    document.getElementById('array').innerHTML = ''
+    myArray.forEach((item) => {
+        let div = document.createElement('div');
+        div.className = "column";
+        div.innerHTML = `${item}`;
+        document.getElementById('array').appendChild(div)
+        let divIndex = document.createElement('divIndex');
+        document.getElementById('indexOf').appendChild(divIndex)
+    })
     console.log(`my array is ${myArray.length} long`)
-    selectRange();
+    updateSelectRange();
     indexOf();
-    testScript();
 }
