@@ -1,34 +1,32 @@
 console.log('welcome to array builder')
 const myArray = new Array();
-const visualArray = document.getElementById('array');
-visualArray.innerHTML = '[use the buttons to amend the array]'
+const visualArray = document.getElementById('arrayNote');
+visualArray.innerHTML = `this is your array: [use the buttons to amend the array]`
 const visualLength = document.getElementById('length');
 visualLength.innerHTML = myArray.length;
 
-//tippy global
+//tippy global - all tool tips handeled by Tippy
 tippy.setDefaultProps({delay: [300, 0]});
 
 //add items buttons
 const pushButton = document.getElementById('push');
 pushButton.addEventListener("click", pushToArray)
-
-//all tool tips handeled by Tippy
 tippy('#push', {
     content: '.push inserts an umbrella emoji at the end of the array',
 });
 
 const unshiftButton = document.getElementById('unshift');
 unshiftButton.addEventListener("click", unshiftArray)
-
 tippy('#unshift', {
     content: '.unshift inserts a lightning bolt emoji at the beggining of the array',
 });
+
 const insertButton = document.getElementById('insert');
 insertButton.addEventListener("click", insertArray)
-
 tippy('#insert', {
     content: 'Insert at uses the .splice method to insert a snowman emoji at the chosen index (use the dropdown selector)',
 });
+
 const addRange = document.getElementById('addRange');
 
 function pushToArray(){
@@ -51,21 +49,18 @@ function insertArray(){
 //remove items buttons
 const popButton = document.getElementById('pop');
 popButton.addEventListener("click", popFromArray)
-
 tippy('#pop', {
     content: '.pop removes from the end of the array',
 });
 
 const shiftButton = document.getElementById('shift');
 shiftButton.addEventListener("click", shiftArray)
-
 tippy('#shift', {
     content: '.shift removes from the beginning of the array',
 });
 
 const removeButton = document.getElementById('remove');
 removeButton.addEventListener("click", removeFromArray)
-
 tippy('#remove', {
     content: 'Remove at uses the .splice to remove from the chosen index (use the dropdown selector)',
 });
@@ -91,6 +86,13 @@ function removeFromArray(){
 
 
 //general functionality
+function arrayNote(){
+    if(myArray.length === 0) {
+    visualArray.innerHTML = `this is your array: [use the buttons to amend the array]`
+    document.getElementById('indexOf').innerHTML = ''
+} else {
+    visualArray.innerHTML = `this is your array:`
+}}
 
 const range = document.getElementsByName('range')
 
@@ -150,4 +152,5 @@ function refreshArray(){
     console.log(`my array is ${myArray.length} long`)
     updateSelectRange();
     indexOf();
+    arrayNote();
 }
