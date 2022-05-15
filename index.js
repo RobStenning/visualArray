@@ -41,7 +41,6 @@ function unshiftArray(){
 
 function insertArray(){
     let insertAt = addRange.options[addRange.selectedIndex].innerHTML
-    console.log(`inserting at index of ${insertAt}`)
     myArray.splice(insertAt, 0, '&#9924')
     refreshArray();
 }
@@ -79,7 +78,6 @@ function shiftArray(){
 
 function removeFromArray(){
     let removeAt = removeRange.options[removeRange.selectedIndex].innerHTML
-    console.log(`removing at index of ${removeAt}`)
     myArray.splice(removeAt, 1)
     refreshArray();
 }
@@ -153,23 +151,28 @@ function enableAddButtons(){
 function windowChecker(){
     if (size === 'medium' && myArray.length > 15) {
         disableAddButtons()
-    } else if(size === 'large' && myArray.length > 30) {
+    } else if(size === 'large' && myArray.length > 20) {
+        disableAddButtons()
+    } else if(size === 'extraLarge' && myArray.length > 30){
         disableAddButtons()
     } else {
         enableAddButtons()
     }
+    console.log(size)
 }
 let size = null;
 
 window.addEventListener('resize', windowSize);
 function windowSize(){
-    if (window.innerWidth < 640) {
+    if (window.outerWidth < 640) {
         size = 'small'
-    } else if (window.innerWidth < 800) {
+    } else if (window.outerWidth < 800) {
         size = 'medium'
-    } else {
+    } else if (window.outerWidth < 1050){
         size = 'large'
-}
+    } else {
+        size = 'extraLarge'
+    }
 windowChecker()
 }
 
