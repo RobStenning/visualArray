@@ -138,6 +138,41 @@ function testScript(){
     })
 }
 
+function disableAddButtons(){
+    pushButton.removeEventListener("click", pushToArray)
+    unshiftButton.removeEventListener("click", unshiftArray)
+    insertButton.removeEventListener("click", insertArray)
+}
+
+function enableAddButtons(){
+    pushButton.addEventListener("click", pushToArray)
+    unshiftButton.addEventListener("click", unshiftArray)
+    insertButton.addEventListener("click", insertArray)
+}
+
+function windowChecker(){
+    if (size === 'medium' && myArray.length > 15) {
+        disableAddButtons()
+    } else if(size === 'large' && myArray.length > 30) {
+        disableAddButtons()
+    } else {
+        enableAddButtons()
+    }
+}
+let size = null;
+
+window.addEventListener('resize', windowSize);
+function windowSize(){
+    if (window.innerWidth < 640) {
+        size = 'small'
+    } else if (window.innerWidth < 800) {
+        size = 'medium'
+    } else {
+        size = 'large'
+}
+windowChecker()
+}
+
 function refreshArray(){
     visualLength.innerHTML = myArray.length
     document.getElementById('array').innerHTML = ''
@@ -149,8 +184,8 @@ function refreshArray(){
         let divIndex = document.createElement('divIndex');
         document.getElementById('indexOf').appendChild(divIndex)
     })
-    console.log(`my array is ${myArray.length} long`)
     updateSelectRange();
     indexOf();
     arrayNote();
+    windowSize();
 }
