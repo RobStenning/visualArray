@@ -1,9 +1,9 @@
 console.log('welcome to array builder')
 const myArray = new Array();
 const visualArray = document.getElementById('arrayNote');
-visualArray.innerHTML = `this is your array: [use the buttons to amend the array]`
+visualArray.innerHTML = `below is your array: [use the buttons to amend the array]`
 const visualLength = document.getElementById('length');
-visualLength.innerHTML = myArray.length;
+visualLength.innerHTML = `the array length is: ${myArray.length}`;
 
 //tippy global - all tool tips handeled by Tippy
 tippy.setDefaultProps({delay: [300, 0]});
@@ -86,10 +86,10 @@ function removeFromArray(){
 //general functionality
 function arrayNote(){
     if(myArray.length === 0) {
-    visualArray.innerHTML = `this is your array: [use the buttons to amend the array]`
+    visualArray.innerHTML = `below is your array: [use the buttons to amend the array]`
     document.getElementById('indexOf').innerHTML = ''
 } else {
-    visualArray.innerHTML = `this is your array:`
+    visualArray.innerHTML = `below is your array:`
 }}
 
 const range = document.getElementsByName('range')
@@ -121,19 +121,6 @@ function indexOf(){
         div.innerHTML = i
         i += 1;
     } while (i < myArray.length)
-}
-
-function testScript(){
-    document.getElementById('testarea').innerHTML = ''
-    
-    myArray.forEach((item) => {
-        let div = document.createElement('div');
-        div.className = "column";
-        div.innerHTML = `${item}`;
-        document.getElementById('array').appendChild(div)
-        let divIndex = document.createElement('divIndex');
-        document.getElementById('indexOf').appendChild(divIndex)
-    })
 }
 
 function disableAddButtons(){
@@ -177,7 +164,7 @@ windowChecker()
 }
 
 function refreshArray(){
-    visualLength.innerHTML = myArray.length
+    visualLength.innerHTML = `the array length is: ${myArray.length}`
     document.getElementById('array').innerHTML = ''
     myArray.forEach((item) => {
         let div = document.createElement('div');
