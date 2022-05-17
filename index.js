@@ -127,16 +127,20 @@ function disableAddButtons(){
     pushButton.removeEventListener("click", pushToArray)
     unshiftButton.removeEventListener("click", unshiftArray)
     insertButton.removeEventListener("click", insertArray)
+    document.getElementById('addItems').innerText = 'Maximum Array Length At This Window Size'
 }
 
 function enableAddButtons(){
     pushButton.addEventListener("click", pushToArray)
     unshiftButton.addEventListener("click", unshiftArray)
     insertButton.addEventListener("click", insertArray)
+    document.getElementById('addItems').innerText = 'Add Items'
 }
 
 function windowChecker(){
-    if (size === 'medium' && myArray.length > 15) {
+    if (size === 'small') {
+        disableAddButtons()
+    } else if(size === 'medium' && myArray.length > 15) {
         disableAddButtons()
     } else if(size === 'large' && myArray.length > 20) {
         disableAddButtons()
@@ -147,6 +151,7 @@ function windowChecker(){
     }
     console.log(size)
 }
+
 let size = null;
 
 window.addEventListener('resize', windowSize);
@@ -179,3 +184,5 @@ function refreshArray(){
     arrayNote();
     windowSize();
 }
+
+windowSize()

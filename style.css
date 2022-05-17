@@ -9,3 +9,11 @@ div.column {
     padding: 0px;
     font-size: 28px;
 }
+
+body h1 {
+    padding: 30px 0px 5px 75px;
+}
+
+body {
+    padding-left: 25px;
+}
