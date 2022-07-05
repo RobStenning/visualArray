@@ -24,4 +24,4 @@ Insert at uses the .splice method to insert a snowman emoji at the chosen index 
 Remove at uses the .splice to remove from the chosen index (use the dropdown selector)
 
 ### Here it is in action
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/35mmaffair/52190072437/" title="visualArray"><img src="https://live.staticflickr.com/65535/52190072437_723842c31d_o.gif" width="1364" height="652" alt="visualArray"></a>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/35mmaffair/52190072437/" title="visualArray"><img src="https://live.staticflickr.com/65535/52190072437_723842c31d_o.gif" width="2000" alt="visualArray"></a>
